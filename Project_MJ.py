@@ -1,36 +1,25 @@
+import TTS_Google
+import STT
 #Voice Recognition
-
-audio = "hello world"
-
 #Voice Interpretation
-
-c = 0
-x = 0
-
-
-while c < len(audio):
-    print (audio [x])
-    x = x + 1
-    c = c + 1
-
-
+STT.say_something
 #Profile set
-class God (object):
+#class God (object):
 
-    species = "Devine"
+#    species = "Devine"
 
-    def __init__ (self, user_Name, user):
+#    def __init__ (self, user_Name, user):
        
-        self.user_Name = user_Name
-        self.user = user
+ #       self.user_Name = user_Name
+  #      self.user = user
 
-WS = God ("WS","Sebastián")
+#WS = God ("WS","Sebastián")
     
-def setuser (WS):
-        if WS.__class__ == God:
-            print (WS.user + " has full access.")
+#def setuser (WS):
+ #       if WS.__class__ == God:
+  #          print (WS.user + " has full access.")
 
-class CPU (object):
+#class CPU (object):
 
 
 
