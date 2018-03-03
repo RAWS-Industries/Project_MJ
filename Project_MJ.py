@@ -1,13 +1,14 @@
 import TTS_Google
 import random
+import Google_Search
 #!/usr/bin/env python3
 # Requires PyAudio and PySpeech.
 
 import speech_recognition as sr
  
-hellos = ["hey", "hi", "hello", "how is it going"]
-def say_hello(hellos):
-    return random.choice(hellos)
+#hellos = ["hey", "hi", "hello", "how is it going"]
+#def say_hello(hellos):
+ #   return random.choice(hellos)
 
 # Record Audio
 r = sr.Recognizer()
@@ -29,12 +30,15 @@ try:
     #Interpretate Answer
 
     #Return Spoken Answer
-    if mjAudio in hellos:
-        text = say_hello(hellos)
-    elif mjAudio == "hello there":
-        text = "general kenobi"
-    else:
-        text = "I am not self conscious, yet"
+#    if mjAudio in hellos:
+ #       text = say_hello(hellos)
+  #  elif mjAudio == "hello there":
+   #     text = "general kenobi"
+    #else:
+     #   text = "I am not self conscious, yet"
+
+    Google_Search.google_search(mjAudio)
+    text = "This is what you searched for" 
 
     TTS_Google.speak(text,'en')
     
