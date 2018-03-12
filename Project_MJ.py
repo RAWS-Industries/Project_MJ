@@ -1,51 +1,53 @@
 import TTS_Google
 import random
 import Google_Search
+import STT
+import MJ_CPU
+
 #!/usr/bin/env python3
 # Requires PyAudio and PySpeech.
+search = ("search", "google", "investigate", "research")
+hello = ("hello", "hey", "hi", "hello there")
 
-import speech_recognition as sr
- 
-#hellos = ["hey", "hi", "hello", "how is it going"]
-#def say_hello(hellos):
- #   return random.choice(hellos)
+#Recognize voice
+mjAudio = STT.talk()
+#Separate by words
+mj = mjAudio.split() 
+#command to run
+mjAudio0 = mj[0]
+#After de first word are the commands
+mjAudio1 = mj[1:]
+#keywords and commands
 
-# Record Audio
-r = sr.Recognizer()
-with sr.Microphone() as source:
-    print("Say something!")
-    audio = r.listen(source)
-    mjAudio = r.recognize_google(audio)
- 
-# Speech recognition using Google Speech Recognition
-try:
-    #here goes everything MJ will do if she understand you
-    print ("You said: " + mjAudio)
+#    else:
+ #       return "I do not know how to do that yet"
 
-    #Profile set
-    #Process
-    #Math/Google Search/Reading of a file or web page
-    #Do It
-    #Get answer of what was asked for and what was asked for
-    #Interpretate Answer
+
+MJ_CPU.select_command(mjAudio0,mjAudio1)
+text = MJ_CPU.select_command(mjAudio0,mjAudio1)
+
+
+#Math/Google Search/Reading of a file or web page
+#Do It
+#Get answer of what was asked for and what was asked for
+#Interpretate Answer
 
     #Return Spoken Answer
-#    if mjAudio in hellos:
+#    if mjAudio in hello:
  #       text = say_hello(hellos)
   #  elif mjAudio == "hello there":
    #     text = "general kenobi"
     #else:
      #   text = "I am not self conscious, yet"
 
-    Google_Search.google_search(mjAudio)
-    text = "This is what you searched for" 
 
-    TTS_Google.speak(text,'en')
+
+# Speech recognition using Google Speech Recognition
+TTS_Google.speak(text,'en')
     
-except sr.UnknownValueError:
-    TTS_Google.speak('I could not understand what you said','en')
-except sr.RequestError as e:
-    print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+
+#here goes everything MJ will do if she understand you
 #Profile set
 #Process
 #Math/Google Search/Reading of a file or web page
