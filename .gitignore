@@ -1,3 +1,5 @@
 .DS_Store
 *.numbers
 *.pages
+__pycache__
+*.pyc

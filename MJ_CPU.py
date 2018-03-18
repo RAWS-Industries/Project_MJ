@@ -1,7 +1,7 @@
 import random
 import Google_Search
-
-
+search = ["search","google","look","caca"]
+hello = ["hello", "hey", "hi", "hello there"]
 
 def say_hello(mjAudio):
     hi = ("hello", "hey", "hi", "hello there")
@@ -19,7 +19,7 @@ def search_for (searchfor):
 #hello = ("hello", "hey", "hi", "hello there")
 #search = ("search", "google", "investigate", "research")
 #hello = ("hello", "hey", "hi", "hello there")
-mjCommands = {('search','look'):search_for}
+#mjCommands = {search:search_for}
 #mjCommands['search'] = search_for,
 #hello:say_hello
 
@@ -28,10 +28,17 @@ mjCommands = {('search','look'):search_for}
 
 
 def select_command (mjAudio0,mjAudio1):
-#    if mjAudio0 in mjCommands.keys():
-       return mjCommands[mjAudio0](mjAudio1)
+    if mjAudio0 in search:
+        return search_for(mjAudio1)
+    elif mjAudio0 in hello:
+        return say_hello(mjAudio0)
+    else:
+        return "I do not know how to do that yet"
 
-select_command ('search','dragon')
+#    if mjAudio0 in mjCommands.keys():
+#       return mjCommands[mjAudio0](mjAudio1)
+
+
 
 #    def think ():
 #        while mjAudio != "that would be all":

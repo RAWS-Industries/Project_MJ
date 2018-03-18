@@ -6,8 +6,6 @@ import MJ_CPU
 
 #!/usr/bin/env python3
 # Requires PyAudio and PySpeech.
-search = ("search", "google", "investigate", "research")
-hello = ("hello", "hey", "hi", "hello there")
 
 #Recognize voice
 mjAudio = STT.talk()
@@ -23,7 +21,6 @@ mjAudio1 = mj[1:]
  #       return "I do not know how to do that yet"
 
 
-MJ_CPU.select_command(mjAudio0,mjAudio1)
 text = MJ_CPU.select_command(mjAudio0,mjAudio1)
 
 
